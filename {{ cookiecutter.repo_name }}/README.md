@@ -2,55 +2,72 @@
 ==============================
 
 {{cookiecutter.description}}
-<!--    ├── data -->
-<!--    │   ├── external       <- Data from third party sources. -->
-<!--    │   ├── interim        <- Intermediate data that has been transformed. -->
-<!--    │   ├── processed      <- The final, canonical data sets for modeling. -->
-<!--    │   └── raw            <- The original, immutable data dump. -->
+
+Machine learning research directory structure.
+
+### Requirements to use the cookiecutter template:
+-----------
+ - Python 3.5
+ - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: This can be installed with pip package manager:
+
+``` bash
+$ pip install cookiecutter
+```
+
+
+### To start a new project, run:
+------------
+
+    cookiecutter https://github.com/{username}/{catalyst}
+
+
+[![asciicast](https://asciinema.org/a/244658.svg)](https://asciinema.org/a/244658)
+
+
+### The resulting directory structure
+
 Project Organization
 ------------
 
+```
+    ├── CHANGELOG.md
+    ├── CONTRIBUTING.md
     ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data               <- Data directory for all experiments.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
-
+    ├── Makefile
+    ├── README.md
+    ├── TODO
+    ├── credentials --  passwds and api keys
+    │   ├── aws
+    │   ├── email
+    │   └── gcloud
+    ├── data    --  all kinds of data
+    │   ├── cache   --  intermediate data like pkl version of processed dataset
+    │   ├── parameters  --  preprocessed data in form suitable for feeding into the models
+    │   └── raw --  raw datasets not overwritten by any code
+    ├── docs    --  documentation for end user
+    ├── images
+    │   ├── figures --  generated analysis as HTML, PDF, LaTeX, etc.
+    │   └── plots   --  generated graphics and figures to be used in reporting
+    ├── libs    --  external modules and packages/requirements/docker file
+    ├── notebooks   --  exploratory notebooks
+    ├── notes   --  technical notes and ideas mostly internal stuff
+    │   ├── references  --  notes pertaining to dataset schema
+    │   └── snippets
+    ├── reports
+    │   ├── diagnostics --  data diagnostics like missing values, model diagnostics
+    │   ├── logs
+    │   │   ├── datafeed    --  logs produced by dataloaders and feeders
+    │   │   └── model   --  logs produced by model objects
+    │   └── profiling   --  code coverage and profiling
+    ├── requirements.txt    --  cookiecutter requirements file
+    ├── setup.py    --  cookiecutter setup file
+    ├── src
+    │   ├── models  --  model file, trainer, test and logger files
+    │   └── scripts --  scripts mostly bash, sometime python too
+    ├── test_environment.py --  cookiecutter test env
+    ├── tex --  in case this work is for publication
+    └── tox.ini --  tox file with settings for running tox; see tox.testrun.org
+```
 
 --------
 

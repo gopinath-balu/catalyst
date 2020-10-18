@@ -3,7 +3,7 @@
 
 {{cookiecutter.description}}
 
-Machine learning research directory structure.
+Directory structure for machine learning projects.
 
 ### Requirements to use the cookiecutter template:
 -----------
